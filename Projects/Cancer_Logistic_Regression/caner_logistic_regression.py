@@ -7,12 +7,18 @@ Original file is located at
     https://colab.research.google.com/drive/1XCVhqAfpD_LQoZTS1FpEsOXmirNd2JlC
 """
 
+
+import warnings
+warnings.filterwarnings('ignore')
+
+
 import pandas as pd
 import matplotlib.pyplot as plt
 import numpy as np
 from sklearn.linear_model import LogisticRegression
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import StandardScaler
+import seaborn as sns
 
 
 cancerData = pd.read_csv("data.csv")
@@ -20,14 +26,19 @@ columns = cancerData.columns
 targetCol = 'diagnosis'
 cancerData['diagnosis'] = cancerData['diagnosis'].map({"M": 1, "B": 0})
 targetData = cancerData[targetCol]
+
+# visualize NAs in heatmap
+# sns.heatmap(cancerData.isnull(), yticklabels=False, cbar=False, cmap='viridis')   # to show how null values count in graphical way.
+# plt.show() 
+
 cancerData.drop(columns=[targetCol,'Unnamed: 32','id'],inplace=True)
-cancerData
+
 
 from sklearn.preprocessing import StandardScaler
 scaler = StandardScaler()
 cancerData = scaler.fit_transform(cancerData)
 cancerData = pd.DataFrame(cancerData,columns = columns[2:-1])
-cancerData
+
 
 
 X_train,X_test,y_train,y_test = train_test_split(cancerData,targetData,test_size=0.3,random_state=42)
@@ -64,7 +75,11 @@ best_C = C_model.C_[0]
 
 model = LogisticRegression(C=best_C)
 model.fit(X_train,y_train)
-model.score(X_train,y_train)
-model.score(X_test,y_test)
+print(f"Best C found: {best_C}")
+print(f"Train accuracy: {model.score(X_train, y_train):.4f}")
+print(f"Test accuracy: {model.score(X_test, y_test):.4f}")
 
 # Hence our model is about 98% accurate on test data
+
+import joblib
+joblib.dump(model, 'Cancer_Logistic_Regression_Model.pkl')  # Saves to a file
