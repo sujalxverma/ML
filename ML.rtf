@@ -1,0 +1,87 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2822
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;\f1\froman\fcharset0 Times-Roman;\f2\froman\fcharset0 Times-Bold;
+\f3\fmodern\fcharset0 Courier;}
+{\colortbl;\red255\green255\blue255;\red0\green0\blue0;\red0\green0\blue0;\red255\green255\blue255;
+\red0\green0\blue117;\red67\green67\blue67;\red0\green0\blue0;\red255\green255\blue255;\red188\green136\blue185;
+\red203\green203\blue202;\red212\green212\blue212;}
+{\*\expandedcolortbl;;\cspthree\c0\c0\c0;\cssrgb\c0\c1\c1;\cssrgb\c100000\c100000\c100000\c0;
+\cspthree\c5\c0\c51080;\cspthree\c33333\c33333\c33333;\cssrgb\c0\c1\c1;\cssrgb\c100000\c100000\c99985\c0;\cssrgb\c78928\c61279\c77593;
+\cssrgb\c83320\c83320\c83112;\cssrgb\c86465\c86464\c86248;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww23220\viewh9140\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\fs36 \cf0 Machine Learning\
+\
+1. Optimiser : Ordinary Least Square , Stochastic gradient descent\
+\
+2. In skit learn, model.predict, X should be 
+\f1\fs24 \expnd0\expndtw0\kerning0
+ 
+\fs36 2D array because it is designed to handle multiple features, and each feature is represented as a column. Even if you only have one feature, the input still needs to be shaped as a 2D array.\
+\
+3. Every ML problem has 3 functions : model , cost function, optimiser\
+\
+4. We can use one hot encoding for the categorial columns to represent them in numerical value.\
+\
+5.  Standardisation :   (X-MEAN)  / STANDARD DEVIATION\
+\
+6. Overfitting : when our model is over optimised for the training set.\
+\
+7. random state : you ensure that the data is split in exactly the same way each time you run your code.\
+\
+8.  Scaling numerical features is important because some features may have value ranging from 1000s to 100000s but some features may vary from 0.1 to 1.0 , so it creates a large difference , hence it is important to scale them within in particular set of range.\
+\
+9.  
+\f2\b Encoding categorical data
+\f1\b0  refers to the process of converting categorical variables (those that contain non-numeric values, such as labels or categories) into numeric values so that they can be used effectively in machine learning models. Most machine learning algorithms, especially those based on mathematical or statistical computations, require numerical input.\
+\
+10.  This option is used to handle situations where a category appears in the test data that was 
+\f2\b not seen during training
+\f1\b0 . By default,  
+\f3 handle_unknown='error'
+\f1  means that if a category in the test set is not present in the training set, an error will be raised.\
+
+\f2\b\fs28 \
+\pard\pardeftab720\sa280\partightenfactor0
+
+\f1\b0\fs36 \cf0 11.  Logistic regression is commonly used for binary classification problems.
+\f2\b \
+
+\f1\b0 12. 
+\f2\b  
+\f1\b0 Cross-entropy loss (often referred to as 
+\f2\b log loss
+\f1\b0 ) is a loss function commonly used in classification problems, particularly in machine learning and deep learning. It measures the performance of a classification model whose output is a probability value between 0 and 1, typically produced by a 
+\f2\b softmax
+\f1\b0  (for multi-class classification) or 
+\f2\b sigmoid
+\f1\b0  (for binary classification) activation function.\
+13.  While testing with new data, if your data has multiple rows , then you may want to create a new scalar for that data and do not want to use the previous one, which was used for the training data.\
+14. 
+\f0 \cf2 \kerning1\expnd0\expndtw0 In the case of KNeighborsClassifier, it will just store the training set.\
+15. In the fit method, either we can go with 2d array or a data frame, but it must be 2d : the features not the labels, and also the input that we are putting in the predict method.\
+16. If you have a pandas series and you want to make it data frame , simply use \'91 to_frame() \'91 method.\
+17. \AppleTypeServices\AppleTypeServicesF65539 \cf3 \cb4 \expnd0\expndtw0\kerning0
+Feature engineering in machine learning is the process of transforming raw data into meaningful features that improve model performance. It involves selecting, modifying, or creating new variables to better represent the underlying problem.\
+18. \AppleTypeServices \cf5 \cb1 \kerning1\expnd0\expndtw0 clf\cf6 .\cf5 score\cf2 (\cf5 X_test\cf2 , \cf5 y_test\cf2 ) : to check the accuracy of the model.\
+19. KNN Regressor averages the values of the n-nearest neighbours.\
+20. For Regression models, we generally use mean square error , rms error, and more such like techniques.\
+21. Decision boundaries of a linear SVM on the forge dataset for different values of C is a straight line.\
+22. We take small dataset for post pruning.\
+23.\cf7 \cb8  
+\fs28 \cf7 \cb8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 from\cf7 \cb8 \strokec10  google.colab \cf7 \cb8 \strokec9 import\cf7 \cb8 \strokec10  files\
+       uploaded = files.upload\cf7 \cb8 \strokec11 ()\
+24. \cf7 \cb8 \strokec10 \
+
+\fs36 \cf2 \cb1 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 \
+
+\f1 \cf0 \expnd0\expndtw0\kerning0
+\
+\
+
+\f2\b\fs28 \
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f1\b0\fs36 \cf0 \
+}
