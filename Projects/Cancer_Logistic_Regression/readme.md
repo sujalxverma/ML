@@ -4,17 +4,6 @@ This project builds a logistic regression model to classify breast cancer tumors
 
 ---
 
-## 📁 Project Structure
-.
-├── data.csv # Breast cancer dataset
-├── Cancer_Logistic_Regression.py
-├── Cancer_Logistic_Regression.ipynb # Google Colab notebook with code
-├── model.pkl # Saved model
-└── README.md # This file
-
-
----
-
 ## 📚 Dataset
 
 - **Source:** [Kaggle - Breast Cancer Wisconsin Dataset](https://www.kaggle.com/datasets/uciml/breast-cancer-wisconsin-data)
