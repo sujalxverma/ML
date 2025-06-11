@@ -38,7 +38,7 @@ The dataset contains the following features, all categorical:
 
 ```bash
 git clone https://github.com/sujalxverma/ML.git
-cd Projects/Cancer_Logistic_Regression
+cd Projects/Car_Evaluation_Decision_tree_Classifier
 
 ## 🚀 Installation
 
